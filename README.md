@@ -2,7 +2,7 @@
 
 The main file in this repository is the Pascal unit `CastleDBControls` in `src/castledbcontrols.pas`.
 
-It defines database-aware controls like `TCastleDBEdit`, very similar to standard Lazarus `TDBEdit`. Database-aware controls can easily be connected to display/edit a database record using Pascal `TDataSet` class. The controls in `CastleDBControls` unit use _Castle Game Engine_ user interface, so they descend from `TCastleUserInterface`, they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
+It defines database-aware controls like `TCastleDBEdit`, very similar to standard Lazarus `TDBEdit`. Database-aware controls can easily be connected to display/edit a database record using Pascal `TDataSource` class (that may, in turn, be connected to an incredible number of database types). The controls in `CastleDBControls` unit use _Castle Game Engine_ user interface, so they descend from `TCastleUserInterface`, they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
 
 ## License
 
