@@ -1,0 +1,12 @@
+# Emacs backups
+*~
+
+# Output
+*.exe
+*.log
+
+# Build tool generated files
+castle-engine-output
+
+# Lazarus generated files
+lib
