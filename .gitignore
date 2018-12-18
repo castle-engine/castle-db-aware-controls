@@ -4,9 +4,12 @@
 # Output
 *.exe
 *.log
+examples/test_database_without_cge/test_database_without_cge
 
 # Build tool generated files
 castle-engine-output
 
-# Lazarus generated files
+# Lazarus files not committed
 lib
+*.lps
+*.res

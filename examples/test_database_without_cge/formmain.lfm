@@ -1,0 +1,206 @@
+object MainForm: TMainForm
+  Left = 890
+  Height = 533
+  Top = 244
+  Width = 607
+  Caption = 'Test Database Without CGE'
+  ClientHeight = 533
+  ClientWidth = 607
+  DesignTimePPI = 140
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.8.0.6'
+  object DBEditName: TDBEdit
+    Left = 200
+    Height = 37
+    Top = 63
+    Width = 390
+    DataField = 'name'
+    DataSource = DataSourceMonsters
+    Anchors = [akTop, akLeft, akRight]
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DBEditDescription: TDBEdit
+    Left = 200
+    Height = 37
+    Top = 105
+    Width = 390
+    DataField = 'description'
+    DataSource = DataSourceMonsters
+    Anchors = [akTop, akLeft, akRight]
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 1
+  end
+  object DBEditHitPoints: TDBEdit
+    Left = 200
+    Height = 37
+    Top = 150
+    Width = 126
+    DataField = 'hitpoints'
+    DataSource = DataSourceMonsters
+    Anchors = [akTop, akLeft, akRight]
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object LabelTitle: TLabel
+    Left = 9
+    Height = 27
+    Top = 9
+    Width = 206
+    Caption = 'Database of monsters:'
+    ParentColor = False
+  end
+  object LabelName: TLabel
+    AnchorSideLeft.Control = LabelTitle
+    AnchorSideTop.Control = LabelTitle
+    AnchorSideTop.Side = asrBottom
+    Left = 9
+    Height = 27
+    Top = 73
+    Width = 55
+    Anchors = []
+    BorderSpacing.Top = 30
+    Caption = 'Name'
+    ParentColor = False
+  end
+  object LabelDescription: TLabel
+    Left = 9
+    Height = 27
+    Top = 115
+    Width = 104
+    Caption = 'Description'
+    ParentColor = False
+  end
+  object LabelHitPoints: TLabel
+    Left = 9
+    Height = 27
+    Top = 160
+    Width = 88
+    Caption = 'Hit Points'
+    ParentColor = False
+  end
+  object ButtonNext: TButton
+    Left = 8
+    Height = 39
+    Top = 272
+    Width = 124
+    AutoSize = True
+    Caption = 'Next Record'
+    OnClick = ButtonNextClick
+    TabOrder = 3
+  end
+  object ButtonPrevious: TButton
+    Left = 8
+    Height = 39
+    Top = 320
+    Width = 160
+    AutoSize = True
+    Caption = 'Previous Record'
+    OnClick = ButtonPreviousClick
+    TabOrder = 4
+  end
+  object ButtonNew: TButton
+    Left = 8
+    Height = 39
+    Top = 368
+    Width = 122
+    AutoSize = True
+    Caption = 'New Record'
+    OnClick = ButtonNewClick
+    TabOrder = 5
+  end
+  object ButtonDelete: TButton
+    Left = 8
+    Height = 39
+    Top = 416
+    Width = 140
+    AutoSize = True
+    Caption = 'Delete Record'
+    OnClick = ButtonDeleteClick
+    TabOrder = 6
+  end
+  object LabelRecordInfo: TLabel
+    Left = 9
+    Height = 27
+    Top = 216
+    Width = 146
+    Caption = 'Record xxx / yyy'
+    ParentColor = False
+  end
+  object DataSetMonsters: TSdfDataSet
+    FileMustExist = True
+    ReadOnly = False
+    FileName = 'data/sample-database.csv'
+    Schema.Strings = (
+      'name'
+      'description'
+      'hitpoints'
+    )
+    TrimSpace = False
+    FieldDefs = <    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = -1
+        Size = 65
+      end    
+      item
+        Name = 'description'
+        DataType = ftString
+        Precision = -1
+        Size = 65
+      end    
+      item
+        Name = 'hitpoints'
+        DataType = ftInteger
+        Precision = -1
+        Size = 65
+      end>
+    AllowMultiLine = False
+    Delimiter = ','
+    FirstLineAsSchema = False
+    StripTrailingDelimiters = False
+    left = 400
+    top = 32
+    object DataSetMonstersName: TStringField
+      DisplayWidth = 1000
+      FieldKind = fkData
+      FieldName = 'name'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DataSetMonstersDescription: TStringField
+      FieldKind = fkData
+      FieldName = 'description'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object DataSetMonstersHitPoints: TStringField
+      Alignment = taRightJustify
+      FieldKind = fkData
+      FieldName = 'hitpoints'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+  end
+  object DataSourceMonsters: TDataSource
+    DataSet = DataSetMonsters
+    left = 392
+    top = 104
+  end
+end
