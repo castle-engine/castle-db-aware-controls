@@ -146,7 +146,7 @@ object MainForm: TMainForm
     top = 376
   end
   object DataSetSample: TDbf
-    FilePath = '/home/michalis/sources/castle-engine/castle-db-aware-controls/examples/test_database_without_cge/data/'
+    FilePath = 'data/'
     IndexDefs = <>
     TableName = 'address_book.dbf'
     TableLevel = 4
