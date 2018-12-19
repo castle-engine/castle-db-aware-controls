@@ -1,0 +1,56 @@
+{
+  "Border" : {
+    "$ClassName" : "TBorder"
+  },
+  "BorderColorPersistent" : {
+    "$ClassName" : "TCastleColorPersistent"
+  },
+  "FullSize" : true,
+  "Name" : "Group1",
+  "$Children" : [
+    {
+      "Border" : {
+        "$ClassName" : "TBorder"
+      },
+      "BorderColorPersistent" : {
+        "$ClassName" : "TCastleColorPersistent"
+      },
+      "ColorPersistent" : {
+        "$ClassName" : "TCastleColorPersistent"
+      },
+      "FullSize" : true,
+      "Name" : "RectangleControl1",
+      "$Children" : [
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "ColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "FontSize" : 2.0000000000000000E+001,
+          "FrameColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "LabelTitle",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "Sample data set (address book):\n",
+          "VerticalAnchorDelta" : -2.0000000000000000E+001,
+          "VerticalAnchorParent" : "vpTop",
+          "VerticalAnchorSelf" : "vpTop",
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleLabel"
+        }
+      ],
+      "$ClassName" : "TCastleRectangleControl"
+    }
+  ],
+  "$ClassName" : "TCastleUserInterface"
+}

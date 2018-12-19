@@ -8,7 +8,11 @@ The main file in this repository is the Pascal unit `CastleDBControls` in `src/c
 
 - The controls in `CastleDBControls` unit use [Castle Game Engine](https://castle-engine.io/) user interface, so they descend from [TCastleUserInterface](https://castle-engine.io/manual_2d_user_interface.php), they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
 
+## Example code
+
 The example in `examples/test_cge_database_controls/` presents simple editing of a table using CGE user interface. Note that it places non-visual non-CGE components (`TDataSource` and `TDbf`) in a data module. You cannot place them in CGE UI (`.castle-user-interface` file) for now. Alternatively, you could of course just create and initialize `TDataSource` and `TDbf` completely from Pascal code.
+
+You can edit the user interface by calling `castle-engine editor` inside the `examples/test_cge_database_controls/` directory. This will start the [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php), with custom component `TCastleDBEdit` (which is not available in CGE core) included. See [more information about using CGE editor with custom components](https://github.com/castle-engine/castle-engine/blob/master/tools/castle-editor/README.md).
 
 ## Database format (DBF) used in the examples
 

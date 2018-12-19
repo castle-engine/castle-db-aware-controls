@@ -5,6 +5,7 @@
 *.exe
 *.log
 examples/test_database_without_cge/test_database_without_cge
+examples/test_cge_database_controls/test_cge_database_controls
 
 # Build tool generated files
 castle-engine-output
