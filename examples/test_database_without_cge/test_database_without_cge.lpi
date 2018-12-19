@@ -10,9 +10,6 @@
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
     </General>
-    <VersionInfo>
-      <StringTable ProductVersion=""/>
-    </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
     </BuildModes>
@@ -26,10 +23,10 @@
     </RunParams>
     <RequiredPackages Count="3">
       <Item1>
-        <PackageName Value="FCL"/>
+        <PackageName Value="DBFLaz"/>
       </Item1>
       <Item2>
-        <PackageName Value="SDFLaz"/>
+        <PackageName Value="FCL"/>
       </Item2>
       <Item3>
         <PackageName Value="LCL"/>
@@ -44,6 +41,7 @@
         <Filename Value="formmain.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
       </Unit1>

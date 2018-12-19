@@ -5,34 +5,48 @@ unit FormMain;
 interface
 
 uses
-  Classes, SysUtils, SdfData, db, FileUtil, Forms, Controls, Graphics, Dialogs,
-  DbCtrls, StdCtrls;
+  Classes, SysUtils, db, dbf, FileUtil, Forms, Controls, Graphics,
+  Dialogs, DbCtrls, StdCtrls;
 
 type
+
+  { TMainForm }
+
   TMainForm = class(TForm)
+    ButtonOpenInBrowser: TButton;
     ButtonDelete: TButton;
     ButtonNext: TButton;
     ButtonPrevious: TButton;
     ButtonNew: TButton;
-    DataSetMonstersDescription: TStringField;
-    DataSetMonstersHitPoints: TStringField;
-    DataSetMonstersName: TStringField;
-    DataSourceMonsters: TDataSource;
+    DataSetSampleCOUNTRY: TStringField;
+    DataSetSampleEMAIL: TStringField;
+    DataSetSampleFAX: TStringField;
+    DataSetSampleFIRSTNAME: TStringField;
+    DataSetSampleLASTNAME: TStringField;
+    DataSetSampleMOBILE: TStringField;
+    DataSetSampleSTREET: TStringField;
+    DataSetSampleTELEPHONE: TStringField;
+    DataSetSampleTOWN: TStringField;
+    DataSetSampleWWW: TStringField;
+    DataSetSampleZIP: TStringField;
+    DataSourceSample: TDataSource;
     DBEditName: TDBEdit;
     DBEditDescription: TDBEdit;
     DBEditHitPoints: TDBEdit;
+    DataSetSample: TDbf;
     LabelTitle: TLabel;
     LabelName: TLabel;
     LabelDescription: TLabel;
     LabelHitPoints: TLabel;
-    DataSetMonsters: TSdfDataSet;
     LabelRecordInfo: TLabel;
     procedure ButtonDeleteClick(Sender: TObject);
     procedure ButtonNewClick(Sender: TObject);
     procedure ButtonNextClick(Sender: TObject);
+    procedure ButtonOpenInBrowserClick(Sender: TObject);
     procedure ButtonPreviousClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure LabelNameClick(Sender: TObject);
   private
     procedure UpdateRecordInfo;
   public
@@ -43,58 +57,69 @@ var
 
 implementation
 
-uses TypInfo;
+uses TypInfo, LCLIntf;
 
 {$R *.lfm}
 
 procedure TMainForm.ButtonNextClick(Sender: TObject);
 begin
-  DataSetMonsters.Next;
+  DataSetSample.Next;
   UpdateRecordInfo;
+end;
+
+procedure TMainForm.ButtonOpenInBrowserClick(Sender: TObject);
+begin
+  OpenURL(DataSetSampleWWW.Value);
 end;
 
 procedure TMainForm.ButtonNewClick(Sender: TObject);
 begin
-  DataSetMonsters.Insert;
-  DataSetMonstersName.Value := 'New Monster Name';
-  DataSetMonstersDescription.Value := 'New Monster Description';
-  DataSetMonstersHitPoints.Value := '100';
+  DataSetSample.Insert;
+  DataSetSample.ClearFields;
+  DataSetSampleFIRSTNAME.Value := 'New First Name';
+  DataSetSampleLASTNAME.Value := 'New Last Name';
+  DataSetSampleWWW.Value := 'http://example.com/';
   UpdateRecordInfo;
 end;
 
 procedure TMainForm.ButtonDeleteClick(Sender: TObject);
 begin
-  DataSetMonsters.Delete;
+  DataSetSample.Delete;
   UpdateRecordInfo;
 end;
 
 procedure TMainForm.ButtonPreviousClick(Sender: TObject);
 begin
-  DataSetMonsters.Prior;
+  DataSetSample.Prior;
   UpdateRecordInfo;
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
-  DataSetMonsters.Open;
+  DataSetSample.Open;
   UpdateRecordInfo;
 end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
 begin
   { It is not really necessary to call this explicitly,
-    the dataset will automatically close before it's destroyed in case
+    the DataSetSample will automatically close before it's destroyed in case
     of this simple application. }
-  DataSetMonsters.Close;
+  DataSetSample.Close;
+end;
+
+procedure TMainForm.LabelNameClick(Sender: TObject);
+begin
+
 end;
 
 procedure TMainForm.UpdateRecordInfo;
 begin
   LabelRecordInfo.Caption := Format('Record %d / %d, DataSet Modified: %s, DataSet State: %s', [
-    DataSetMonsters.RecNo,
-    DataSetMonsters.RecordCount,
-    BoolToStr(DataSetMonsters.Modified, true),
-    GetEnumName(TypeInfo(TDataSetState), Ord(DataSetMonsters.State))
+    DataSetSample.RecNo,
+    DataSetSample.RecordCount,
+    BoolToStr(DataSetSample.Modified, true),
+    GetEnumName(TypeInfo(TDataSetState), Ord(DataSetSample.State))
   ]);
 end;
 

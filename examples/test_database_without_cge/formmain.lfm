@@ -1,22 +1,22 @@
 object MainForm: TMainForm
-  Left = 890
+  Left = 628
   Height = 533
   Top = 244
-  Width = 607
+  Width = 776
   Caption = 'Test Database Without CGE'
   ClientHeight = 533
-  ClientWidth = 607
-  DesignTimePPI = 140
+  ClientWidth = 776
+  DesignTimePPI = 120
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '1.8.4.0'
   object DBEditName: TDBEdit
     Left = 200
-    Height = 37
+    Height = 32
     Top = 63
-    Width = 390
-    DataField = 'name'
-    DataSource = DataSourceMonsters
+    Width = 559
+    DataField = 'FIRSTNAME'
+    DataSource = DataSourceSample
     Anchors = [akTop, akLeft, akRight]
     CharCase = ecNormal
     MaxLength = 0
@@ -24,11 +24,11 @@ object MainForm: TMainForm
   end
   object DBEditDescription: TDBEdit
     Left = 200
-    Height = 37
+    Height = 32
     Top = 105
-    Width = 390
-    DataField = 'description'
-    DataSource = DataSourceMonsters
+    Width = 559
+    DataField = 'LASTNAME'
+    DataSource = DataSourceSample
     Anchors = [akTop, akLeft, akRight]
     CharCase = ecNormal
     MaxLength = 0
@@ -36,11 +36,11 @@ object MainForm: TMainForm
   end
   object DBEditHitPoints: TDBEdit
     Left = 200
-    Height = 37
+    Height = 32
     Top = 150
-    Width = 126
-    DataField = 'hitpoints'
-    DataSource = DataSourceMonsters
+    Width = 366
+    DataField = 'WWW'
+    DataSource = DataSourceSample
     Anchors = [akTop, akLeft, akRight]
     CharCase = ecNormal
     MaxLength = 0
@@ -48,46 +48,44 @@ object MainForm: TMainForm
   end
   object LabelTitle: TLabel
     Left = 9
-    Height = 27
+    Height = 22
     Top = 9
-    Width = 206
-    Caption = 'Database of monsters:'
+    Width = 266
+    Caption = 'Sample data set (address book):'
     ParentColor = False
   end
   object LabelName: TLabel
     AnchorSideLeft.Control = LabelTitle
-    AnchorSideTop.Control = LabelTitle
     AnchorSideTop.Side = asrBottom
     Left = 9
-    Height = 27
+    Height = 22
     Top = 73
-    Width = 55
-    Anchors = []
-    BorderSpacing.Top = 30
-    Caption = 'Name'
+    Width = 90
+    Caption = 'First Name'
     ParentColor = False
+    OnClick = LabelNameClick
   end
   object LabelDescription: TLabel
     Left = 9
-    Height = 27
+    Height = 22
     Top = 115
-    Width = 104
-    Caption = 'Description'
+    Width = 88
+    Caption = 'Last Name'
     ParentColor = False
   end
   object LabelHitPoints: TLabel
     Left = 9
-    Height = 27
+    Height = 22
     Top = 160
-    Width = 88
-    Caption = 'Hit Points'
+    Width = 51
+    Caption = 'WWW'
     ParentColor = False
   end
   object ButtonNext: TButton
     Left = 8
-    Height = 39
+    Height = 34
     Top = 272
-    Width = 124
+    Width = 115
     AutoSize = True
     Caption = 'Next Record'
     OnClick = ButtonNextClick
@@ -95,9 +93,9 @@ object MainForm: TMainForm
   end
   object ButtonPrevious: TButton
     Left = 8
-    Height = 39
+    Height = 34
     Top = 320
-    Width = 160
+    Width = 148
     AutoSize = True
     Caption = 'Previous Record'
     OnClick = ButtonPreviousClick
@@ -105,9 +103,9 @@ object MainForm: TMainForm
   end
   object ButtonNew: TButton
     Left = 8
-    Height = 39
+    Height = 34
     Top = 368
-    Width = 122
+    Width = 113
     AutoSize = True
     Caption = 'New Record'
     OnClick = ButtonNewClick
@@ -115,9 +113,9 @@ object MainForm: TMainForm
   end
   object ButtonDelete: TButton
     Left = 8
-    Height = 39
+    Height = 34
     Top = 416
-    Width = 140
+    Width = 131
     AutoSize = True
     Caption = 'Delete Record'
     OnClick = ButtonDeleteClick
@@ -125,82 +123,144 @@ object MainForm: TMainForm
   end
   object LabelRecordInfo: TLabel
     Left = 9
-    Height = 27
+    Height = 22
     Top = 216
-    Width = 146
+    Width = 133
     Caption = 'Record xxx / yyy'
     ParentColor = False
   end
-  object DataSetMonsters: TSdfDataSet
-    FileMustExist = True
-    ReadOnly = False
-    FileName = 'data/sample-database.csv'
-    Schema.Strings = (
-      'name'
-      'description'
-      'hitpoints'
-    )
-    TrimSpace = False
-    FieldDefs = <    
-      item
-        Name = 'name'
-        DataType = ftString
-        Precision = -1
-        Size = 65
-      end    
-      item
-        Name = 'description'
-        DataType = ftString
-        Precision = -1
-        Size = 65
-      end    
-      item
-        Name = 'hitpoints'
-        DataType = ftInteger
-        Precision = -1
-        Size = 65
-      end>
-    AllowMultiLine = False
-    Delimiter = ','
-    FirstLineAsSchema = False
-    StripTrailingDelimiters = False
-    left = 400
-    top = 32
-    object DataSetMonstersName: TStringField
-      DisplayWidth = 1000
+  object ButtonOpenInBrowser: TButton
+    Left = 609
+    Height = 34
+    Top = 150
+    Width = 150
+    Anchors = [akTop, akRight]
+    AutoSize = True
+    Caption = 'Open in browser'
+    OnClick = ButtonOpenInBrowserClick
+    TabOrder = 7
+  end
+  object DataSourceSample: TDataSource
+    DataSet = DataSetSample
+    left = 592
+    top = 376
+  end
+  object DataSetSample: TDbf
+    FilePath = '/home/michalis/sources/castle-engine/castle-db-aware-controls/examples/test_database_without_cge/data/'
+    IndexDefs = <>
+    TableName = 'address_book.dbf'
+    TableLevel = 4
+    FilterOptions = []
+    left = 592
+    top = 304
+    object DataSetSampleFIRSTNAME: TStringField
       FieldKind = fkData
-      FieldName = 'name'
+      FieldName = 'FIRSTNAME'
       Index = 0
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Size = 30
     end
-    object DataSetMonstersDescription: TStringField
+    object DataSetSampleLASTNAME: TStringField
       FieldKind = fkData
-      FieldName = 'description'
+      FieldName = 'LASTNAME'
       Index = 1
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 1000
+      Size = 30
     end
-    object DataSetMonstersHitPoints: TStringField
-      Alignment = taRightJustify
+    object DataSetSampleSTREET: TStringField
       FieldKind = fkData
-      FieldName = 'hitpoints'
+      FieldName = 'STREET'
       Index = 2
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 1000
+      Size = 50
     end
-  end
-  object DataSourceMonsters: TDataSource
-    DataSet = DataSetMonsters
-    left = 392
-    top = 104
+    object DataSetSampleZIP: TStringField
+      FieldKind = fkData
+      FieldName = 'ZIP'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DataSetSampleTOWN: TStringField
+      FieldKind = fkData
+      FieldName = 'TOWN'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object DataSetSampleCOUNTRY: TStringField
+      FieldKind = fkData
+      FieldName = 'COUNTRY'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object DataSetSampleTELEPHONE: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEPHONE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object DataSetSampleFAX: TStringField
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object DataSetSampleMOBILE: TStringField
+      FieldKind = fkData
+      FieldName = 'MOBILE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object DataSetSampleEMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object DataSetSampleWWW: TStringField
+      FieldKind = fkData
+      FieldName = 'WWW'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
   end
 end
