@@ -1,12 +1,14 @@
 # Database-aware controls using Castle Game Engine UI
 
-The main file in this repository is the Pascal unit `CastleDBControls` in `src/castledbcontrols.pas`.
+The main file in this repository is the Pascal unit `CastleDBControls` in `src/castledbcontrols.pas`. It defines database-aware controls like `TCastleDBEdit`, very similar to standard Lazarus `TDBEdit`.
 
-It defines database-aware controls like `TCastleDBEdit`, very similar to standard Lazarus `TDBEdit`. Database-aware controls can easily be connected to display/edit a database record using Pascal `TDataSource` class (that may, in turn, be connected to an incredible number of database types). The controls in `CastleDBControls` unit use _Castle Game Engine_ user interface, so they descend from `TCastleUserInterface`, they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
+- Database-aware controls can easily be connected to display/edit a database record using Pascal `TDataSource` class. `TDataSource` connects to a `TDataSet`, and FPC/Lazarus include a large number of `TDataSet` for nearly every database technology (SQL or not) out there.
 
-Note that for the purpose of this demo, I chose a simple "database", which defines a single table using [TSdfDataSet](http://wiki.freepascal.org/TSdfDataSet), which is [pretty much just a CSV file](http://wiki.freepascal.org/SDF). This allows to easily run it on any system, without installing or configuring anything. Of course, `TCastleDBEdit` will work with any database that can be exposed through `TDataSource` class, so you can as well use any full-featured SQL database etc.
+- The controls in `CastleDBControls` unit use _Castle Game Engine_ user interface, so they descend from `TCastleUserInterface`, they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
 
-Note that (for now) you cannot use non-visual non-CGE components, like `TDataSource` and `TSdfDataSet`, on the designed CGE UI (in .castle-user-interface file). So our example in `examples/cge_monster_database_example/` uses a data module to configure `TDataSource` and `TSdfDataSet` visually. Alternatively, you could of course just create and initialize `TDataSource` and `TSdfDataSet` completely from Pascal code.
+For the purpose of this demo, I chose a simple "database", which defines a single table using [TSdfDataSet](http://wiki.freepascal.org/TSdfDataSet), which is [pretty much just a CSV file](http://wiki.freepascal.org/SDF). This allows to easily run it on any system, without installing or configuring anything. Of course, `TCastleDBEdit` will work with any database that can be expressed using Pascal `TDataSet` descendant (and thus also works with `TDataSource`), so you can as well use any full-featured SQL database there.
+
+Note that (right now) you cannot use non-visual non-CGE components, like `TDataSource` and `TSdfDataSet`, on the designed CGE UI (in .castle-user-interface file). So our example in `examples/cge_monster_database_example/` uses a data module to configure `TDataSource` and `TSdfDataSet` visually. Alternatively, you could of course just create and initialize `TDataSource` and `TSdfDataSet` completely from Pascal code.
 
 TODO: Doing Insert on TSdfDataSet is broken, it later causes Access Violation at post.
 
