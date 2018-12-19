@@ -43,6 +43,8 @@ var
 
 implementation
 
+uses TypInfo;
+
 {$R *.lfm}
 
 procedure TMainForm.ButtonNextClick(Sender: TObject);
@@ -80,15 +82,19 @@ end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
 begin
+  { It is not really necessary to call this explicitly,
+    the dataset will automatically close before it's destroyed in case
+    of this simple application. }
   DataSetMonsters.Close;
 end;
 
 procedure TMainForm.UpdateRecordInfo;
 begin
-  LabelRecordInfo.Caption := Format('Record %d / %d, Modified: %s', [
+  LabelRecordInfo.Caption := Format('Record %d / %d, DataSet Modified: %s, DataSet State: %s', [
     DataSetMonsters.RecNo,
     DataSetMonsters.RecordCount,
-    BoolToStr(DataSetMonsters.Modified, true)
+    BoolToStr(DataSetMonsters.Modified, true),
+    GetEnumName(TypeInfo(TDataSetState), Ord(DataSetMonsters.State))
   ]);
 end;
 
