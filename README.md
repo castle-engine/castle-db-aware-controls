@@ -8,6 +8,8 @@ Note that for the purpose of this demo, I chose a simple "database", which defin
 
 Note that (for now) you cannot use non-visual non-CGE components, like `TDataSource` and `TSdfDataSet`, on the designed CGE UI (in .castle-user-interface file). So our example in `examples/cge_monster_database_example/` uses a data module to configure `TDataSource` and `TSdfDataSet` visually. Alternatively, you could of course just create and initialize `TDataSource` and `TSdfDataSet` completely from Pascal code.
 
+TODO: Doing Insert on TSdfDataSet is broken, it later causes Access Violation at post.
+
 ## License
 
 Copyright 2018 Michalis Kamburelis .
