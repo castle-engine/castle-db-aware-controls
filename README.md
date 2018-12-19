@@ -4,11 +4,11 @@
 
 The main file in this repository is the Pascal unit `CastleDBControls` in `src/castledbcontrols.pas`. It defines database-aware controls like `TCastleDBEdit`, very similar to standard Lazarus `TDBEdit`.
 
-- Database-aware controls can easily be connected to display/edit a database record using Pascal `TDataSource` class. `TDataSource` connects to a `TDataSet`, and FPC/Lazarus include a large number of `TDataSet` for nearly every database technology (SQL or not) out there.
+- _Database-aware controls_ can easily be connected to display/edit a database record using Pascal `TDataSource` class. `TDataSource` connects to a `TDataSet`, and FPC/Lazarus include a large number of `TDataSet` descendants for nearly every database technology (SQL or not) existing.
 
-- The controls in `CastleDBControls` unit use _Castle Game Engine_ user interface, so they descend from `TCastleUserInterface`, they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
+- The controls in `CastleDBControls` unit use [Castle Game Engine](https://castle-engine.io/) user interface, so they descend from [TCastleUserInterface](https://castle-engine.io/manual_2d_user_interface.php), they are rendered using OpenGL(ES) (or any future CGE renderer), and they can be designed using [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php).
 
-The example in `examples/test_cge_database_controls/` presents simple editing of a table using CGE user interface. Note that it places non-visual non-CGE components (like `TDataSource` and `TDbf`) in a data module. You cannot place them in CGE UI (`.castle-user-interface` file) for now. Alternatively, you could of course just create and initialize `TDataSource` and `TDbf` completely from Pascal code.
+The example in `examples/test_cge_database_controls/` presents simple editing of a table using CGE user interface. Note that it places non-visual non-CGE components (`TDataSource` and `TDbf`) in a data module. You cannot place them in CGE UI (`.castle-user-interface` file) for now. Alternatively, you could of course just create and initialize `TDataSource` and `TDbf` completely from Pascal code.
 
 ## Database format (DBF) used in the examples
 
@@ -26,4 +26,4 @@ Copyright 2018 Michalis Kamburelis .
 
 Everything in this repository `castle-db-aware-controls` is under a permissive _Apache 2.0 License_. Simplifying: you can use it however you like (including for closed-source projects), just keep a mention that the original code is copyright by Michalis Kamburelis.
 
-The unit `src/castledbcontrols.pas` is dual-licenced: you can alternatively use it on the same license as _Castle Game Engine_ core, which is [LGPL with static linking exception](https://github.com/castle-engine/castle-engine/blob/master/COPYING.md). Simplifying: you can use this unit in your closed-source applications, but you must publish your modifications to this unit openly.
+The unit `src/castledbcontrols.pas` is dual-licenced: you can alternatively use it on the same license as _Castle Game Engine_ core, which is [LGPL with static linking exception](https://github.com/castle-engine/castle-engine/blob/master/COPYING.md).
