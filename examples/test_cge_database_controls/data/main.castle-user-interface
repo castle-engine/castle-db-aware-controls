@@ -31,7 +31,7 @@
           "ColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
-          "FontSize" : 2.0000000000000000E+001,
+          "FontSize" : 3.0000000000000000E+001,
           "FrameColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
@@ -40,10 +40,432 @@
           "OutlineColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
-          "Text" : "Sample data set (address book):\n",
+          "Text" : "Sample data set (address book)\n",
           "VerticalAnchorDelta" : -2.0000000000000000E+001,
           "VerticalAnchorParent" : "vpTop",
           "VerticalAnchorSelf" : "vpTop",
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleLabel"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "ColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "FrameColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "LabelFirstName",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "First Name\n",
+          "VerticalAnchorDelta" : 3.8000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleLabel"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "ColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "FrameColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "LabelLastName",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "Last Name\n",
+          "VerticalAnchorDelta" : 3.3000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleLabel"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "ColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "FrameColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "LabelWww",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "WWW\n",
+          "VerticalAnchorDelta" : 2.8000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleLabel"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Caption" : "Open in browser",
+          "CustomColorDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorUse" : false,
+          "HorizontalAnchorDelta" : 5.4000000000000000E+002,
+          "Name" : "ButtonOpenInBrowser",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 2.8000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleButton"
+        },
+        {
+          "BackgroundColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CaptureAllInput" : false,
+          "FocusedColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 1.5000000000000000E+002,
+          "Name" : "EditFirstName",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "PlaceholderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "DBEdit1",
+          "UnfocusedColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 3.8000000000000000E+002,
+          "Width" : 5.7000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleDBEdit"
+        },
+        {
+          "BackgroundColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CaptureAllInput" : false,
+          "FocusedColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 1.5000000000000000E+002,
+          "Name" : "EditFirstName1",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "PlaceholderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "DBEdit1",
+          "UnfocusedColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 3.3000000000000000E+002,
+          "Width" : 5.7000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleDBEdit"
+        },
+        {
+          "BackgroundColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CaptureAllInput" : false,
+          "FocusedColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 1.5000000000000000E+002,
+          "Name" : "EditFirstName2",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "PlaceholderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "DBEdit1",
+          "UnfocusedColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 2.8000000000000000E+002,
+          "Width" : 3.9000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleDBEdit"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Caption" : "Delete Record",
+          "CustomColorDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorUse" : false,
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "ButtonDelete",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 3.0000000000000000E+001,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleButton"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Caption" : "New Record",
+          "CustomColorDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorUse" : false,
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "ButtonNew",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 8.0000000000000000E+001,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleButton"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Caption" : "Next Record",
+          "CustomColorDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorUse" : false,
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "ButtonNext",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 1.8000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleButton"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Caption" : "Previous Record",
+          "CustomColorDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomColorPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "CustomTextColorUse" : false,
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "ButtonPrevious",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintDisabledPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintFocusedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintNormalPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "TintPressedPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "VerticalAnchorDelta" : 1.3000000000000000E+002,
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleButton"
+        },
+        {
+          "Border" : {
+            "$ClassName" : "TBorder"
+          },
+          "BorderColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "ColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "FrameColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "HorizontalAnchorDelta" : 2.0000000000000000E+001,
+          "Name" : "LabelRecordInfo",
+          "OutlineColorPersistent" : {
+            "$ClassName" : "TCastleColorPersistent"
+          },
+          "Text" : "Record xxx / yyy\n",
+          "VerticalAnchorDelta" : 2.3000000000000000E+002,
           "$Children" : [
           ],
           "$ClassName" : "TCastleLabel"

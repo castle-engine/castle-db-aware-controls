@@ -23,7 +23,8 @@ implementation
 uses SysUtils,
   CastleWindow, CastleScene, CastleControls, CastleLog,
   CastleFilesUtils, CastleSceneCore, CastleKeysMouse, CastleColors,
-  CastleUIControls, CastleApplicationProperties, CastleComponentSerialize;
+  CastleUIControls, CastleApplicationProperties, CastleComponentSerialize,
+  CastleDBControls;
 
 var
   Window: TCastleWindowCustom;
