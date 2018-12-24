@@ -24,6 +24,14 @@ Initially I wanted to use something even simpler: [TSdfDataSet](http://wiki.free
 
 Of course, `TCastleDBEdit` will work with any database that can be expressed using Pascal `TDataSet` descendant (and thus also works with `TDataSource`), so you can as well use any full-featured SQL database there.
 
+## Using TDataModule inside CGE application
+
+Our example `examples/test_cge_database_controls/` uses solely _Castle Game Engine_ user interface. It does not use LCL for user interface, e.g. it doesn't use LCL `TForm`. Fortunately, it is still possible to use `TDataModule`. All the non-visual components that we want to use (`TDataModule`, `TDataSource`, `TDbf`) are actually part of FPC, not Lazarus.
+
+This allows to use Lazarus _Object Inspector_ to comfortably design our data module properties and components (with `TDataSource`, `TDbf`). Our module `GameInitialize` then sets the appropriate `EditXxx.DataSource` properties, this way linking CGE `TCastleDBEdit` with the database you designed in a data module.
+
+To make sure everything compiles smoothly (both from Lazarus and when using our build tool), just make sure to remove references to LCL (or units depending on LCL parts) from uses clauses. E.g. you don't need `DBFLaz` unit (that links to LCL, needlessly) or `FileUtil` or `LResources`. It should be possible, in theory, to depend only on packages like `LCLBase` and `LazUtils` (not full `LCL`), but it was causing linking errors in my tests (with Lazarus 1.8.4 based on FPC 3.0.4).
+
 ## License
 
 Copyright 2018 Michalis Kamburelis .

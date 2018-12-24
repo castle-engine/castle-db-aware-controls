@@ -22,15 +22,21 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="2">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="castle_window"/>
+        <PackageName Value="DBFLaz"/>
       </Item1>
       <Item2>
-        <PackageName Value="castle_base"/>
+        <PackageName Value="FCL"/>
       </Item2>
+      <Item3>
+        <PackageName Value="castle_window"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="castle_base"/>
+      </Item4>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="test_cge_database_controls_standalone.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -44,6 +50,14 @@
         <Filename Value="../../src/castledbcontrols.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="datamodulesampledatabase.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DbModule"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="DataModuleSampleDatabase"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -177,6 +177,7 @@
             "$ClassName" : "TCastleColorPersistent"
           },
           "CaptureAllInput" : false,
+          "DataField" : "FIRSTNAME",
           "FocusedColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
@@ -188,7 +189,6 @@
           "PlaceholderColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
-          "Text" : "DBEdit1",
           "UnfocusedColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
@@ -209,18 +209,18 @@
             "$ClassName" : "TCastleColorPersistent"
           },
           "CaptureAllInput" : false,
+          "DataField" : "LASTNAME",
           "FocusedColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
           "HorizontalAnchorDelta" : 1.5000000000000000E+002,
-          "Name" : "EditFirstName1",
+          "Name" : "EditLastName",
           "OutlineColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
           "PlaceholderColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
-          "Text" : "DBEdit1",
           "UnfocusedColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
@@ -241,18 +241,18 @@
             "$ClassName" : "TCastleColorPersistent"
           },
           "CaptureAllInput" : false,
+          "DataField" : "WWW",
           "FocusedColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
           "HorizontalAnchorDelta" : 1.5000000000000000E+002,
-          "Name" : "EditFirstName2",
+          "Name" : "EditWww",
           "OutlineColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
           "PlaceholderColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },
-          "Text" : "DBEdit1",
           "UnfocusedColorPersistent" : {
             "$ClassName" : "TCastleColorPersistent"
           },

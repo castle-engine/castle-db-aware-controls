@@ -1,0 +1,131 @@
+object DbModule: TDbModule
+  OldCreateOrder = False
+  Height = 407
+  HorizontalOffset = 536
+  VerticalOffset = 210
+  Width = 456
+  PPI = 120
+  object DataSourceSample: TDataSource
+    DataSet = DataSetSample
+    left = 127
+    top = 65
+  end
+  object DataSetSample: TDbf
+    FilePath = '/mnt/windows/cygwin/home/michalis/sources/castle-engine/castle-db-aware-controls/examples/test_cge_database_controls/data/'
+    IndexDefs = <>
+    TableName = 'address_book.dbf'
+    TableLevel = 4
+    FilterOptions = []
+    left = 122
+    top = 181
+    object DataSetSampleFIRSTNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'FIRSTNAME'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object DataSetSampleLASTNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'LASTNAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object DataSetSampleSTREET: TStringField
+      FieldKind = fkData
+      FieldName = 'STREET'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object DataSetSampleZIP: TStringField
+      FieldKind = fkData
+      FieldName = 'ZIP'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DataSetSampleTOWN: TStringField
+      FieldKind = fkData
+      FieldName = 'TOWN'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object DataSetSampleCOUNTRY: TStringField
+      FieldKind = fkData
+      FieldName = 'COUNTRY'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object DataSetSampleTELEPHONE: TStringField
+      FieldKind = fkData
+      FieldName = 'TELEPHONE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object DataSetSampleFAX: TStringField
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object DataSetSampleMOBILE: TStringField
+      FieldKind = fkData
+      FieldName = 'MOBILE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object DataSetSampleEMAIL: TStringField
+      FieldKind = fkData
+      FieldName = 'EMAIL'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object DataSetSampleWWW: TStringField
+      FieldKind = fkData
+      FieldName = 'WWW'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+end
