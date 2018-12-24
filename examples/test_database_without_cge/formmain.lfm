@@ -10,7 +10,7 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '1.8.4.0'
-  object DBEditName: TDBEdit
+  object EditFirstName: TDBEdit
     Left = 200
     Height = 32
     Top = 63
@@ -22,7 +22,7 @@ object MainForm: TMainForm
     MaxLength = 0
     TabOrder = 0
   end
-  object DBEditDescription: TDBEdit
+  object EditLastName: TDBEdit
     Left = 200
     Height = 32
     Top = 105
@@ -34,7 +34,7 @@ object MainForm: TMainForm
     MaxLength = 0
     TabOrder = 1
   end
-  object DBEditHitPoints: TDBEdit
+  object EditWww: TDBEdit
     Left = 200
     Height = 32
     Top = 150
@@ -54,7 +54,7 @@ object MainForm: TMainForm
     Caption = 'Sample data set (address book):'
     ParentColor = False
   end
-  object LabelName: TLabel
+  object LabelFirstName: TLabel
     AnchorSideLeft.Control = LabelTitle
     AnchorSideTop.Side = asrBottom
     Left = 9
@@ -63,9 +63,8 @@ object MainForm: TMainForm
     Width = 90
     Caption = 'First Name'
     ParentColor = False
-    OnClick = LabelNameClick
   end
-  object LabelDescription: TLabel
+  object LabelLastName: TLabel
     Left = 9
     Height = 22
     Top = 115
@@ -73,7 +72,7 @@ object MainForm: TMainForm
     Caption = 'Last Name'
     ParentColor = False
   end
-  object LabelHitPoints: TLabel
+  object LabelWww: TLabel
     Left = 9
     Height = 22
     Top = 160

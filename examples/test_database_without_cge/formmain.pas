@@ -1,3 +1,20 @@
+{
+  Copyright 2018-2018 Michalis Kamburelis.
+
+  This file is part of "Castle Game Engine DB Aware Controls".
+
+  "Castle Game Engine DB Aware Controls" is free software; see the file LICENSE,
+  included in this distribution, for details about the copyright.
+
+  "Castle Game Engine DB Aware Controls" is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+  ----------------------------------------------------------------------------
+}
+
+{ Main form of the LCL example, showing off database-controls in LCL
+  (without CGE). }
 unit FormMain;
 
 {$mode objfpc}{$H+}
@@ -30,14 +47,14 @@ type
     DataSetSampleWWW: TStringField;
     DataSetSampleZIP: TStringField;
     DataSourceSample: TDataSource;
-    DBEditName: TDBEdit;
-    DBEditDescription: TDBEdit;
-    DBEditHitPoints: TDBEdit;
+    EditFirstName: TDBEdit;
+    EditLastName: TDBEdit;
+    EditWww: TDBEdit;
     DataSetSample: TDbf;
     LabelTitle: TLabel;
-    LabelName: TLabel;
-    LabelDescription: TLabel;
-    LabelHitPoints: TLabel;
+    LabelFirstName: TLabel;
+    LabelLastName: TLabel;
+    LabelWww: TLabel;
     LabelRecordInfo: TLabel;
     procedure ButtonDeleteClick(Sender: TObject);
     procedure ButtonNewClick(Sender: TObject);
@@ -46,7 +63,6 @@ type
     procedure ButtonPreviousClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure LabelNameClick(Sender: TObject);
   private
     procedure UpdateRecordInfo;
   public
@@ -108,11 +124,6 @@ begin
   DataSetSample.Close;
 end;
 
-procedure TMainForm.LabelNameClick(Sender: TObject);
-begin
-
-end;
-
 procedure TMainForm.UpdateRecordInfo;
 begin
   LabelRecordInfo.Caption := Format('Record %d / %d, DataSet Modified: %s, DataSet State: %s', [
@@ -124,4 +135,3 @@ begin
 end;
 
 end.
-
