@@ -61,6 +61,7 @@ type
     procedure ButtonNextClick(Sender: TObject);
     procedure ButtonOpenInBrowserClick(Sender: TObject);
     procedure ButtonPreviousClick(Sender: TObject);
+    procedure SomeEditChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -107,6 +108,11 @@ end;
 procedure TMainForm.ButtonPreviousClick(Sender: TObject);
 begin
   DataSetSample.Prior;
+  UpdateRecordInfo;
+end;
+
+procedure TMainForm.SomeEditChange(Sender: TObject);
+begin
   UpdateRecordInfo;
 end;
 
