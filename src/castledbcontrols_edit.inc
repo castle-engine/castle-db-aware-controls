@@ -127,7 +127,7 @@ end;
 
 procedure TCastleDBEdit.DoChange;
 begin
-  FDatalink.Edit;
+  FDataLink.Edit;
   FDataLink.Modified;
   inherited;
 end;
@@ -135,14 +135,21 @@ end;
 procedure TCastleDBEdit.SetFocused(const Value: boolean);
 begin
   inherited;
-  { When focus lost, finalize editing that was started
-    in TCastleDBEdit.DoChange. }
-  if FDatalink.Editing then
+  if Value then
   begin
-    FDatalink.UpdateRecord;
-    FDataLink.IsModified := False;
+    if FDataLink.Edit then
+      Text := FDataLink.Field.Text;
   end else
-    FDatalink.Reset;
+  begin
+    { When focus lost, finalize editing that was started
+      in TCastleDBEdit.DoChange. }
+    if FDataLink.Editing then
+    begin
+      FDataLink.UpdateRecord;
+      FDataLink.IsModified := False;
+    end else
+      FDataLink.Reset;
+  end;
 end;
 
 {$endif read_implementation}
