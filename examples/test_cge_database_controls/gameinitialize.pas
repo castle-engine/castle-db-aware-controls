@@ -33,6 +33,8 @@ var
 type
   { Class to handle application events. }
   TEventsHandler = class(TComponent)
+  private
+    procedure WindowClose(Container: TUIContainer);
   public
     LabelRecordInfo: TCastleLabel;
 
@@ -63,6 +65,8 @@ var
     ButtonOpenInBrowser: TCastleButton;
 begin
   DbModule := TDbModule.Create(Application);
+
+  Window.OnCloseObject := @WindowClose;
 
   { Adjust container settings,
     e.g. for a scalable UI (adjusts to any window size in a smart way). }
@@ -151,6 +155,14 @@ end;
 procedure TEventsHandler.SomeEditChanged(Sender: TObject);
 begin
   UpdateRecordInfo; // show that Modified changed to true
+end;
+
+procedure TEventsHandler.WindowClose(Container: TUIContainer);
+begin
+  { It is not really necessary to call this explicitly,
+    the DataSetSample will automatically close before it's destroyed in case
+    of this simple application. }
+  DbModule.DataSetSample.Close;
 end;
 
 initialization
