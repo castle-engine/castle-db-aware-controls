@@ -8,8 +8,20 @@
         <MainUnitHasTitleStatement Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
       <Title Value="test_cge_database_controls"/>
     </General>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
     <RequiredPackages Count="2">
       <Item1>
         <PackageName Value="castle_window"/>
@@ -18,11 +30,20 @@
         <PackageName Value="castle_base"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="1">
+    <Units Count="3">
       <Unit0>
         <Filename Value="test_cge_database_controls_standalone.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="gameinitialize.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GameInitialize"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="../../src/castledbcontrols.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -31,16 +52,14 @@
       <Filename Value="test_cge_database_controls"/>
     </Target>
     <SearchPaths>
-      <IncludeFiles Value="../../src/"/>
-      <OtherUnitFiles Value="../../src/"/>
+      <IncludeFiles Value="../../src"/>
+      <OtherUnitFiles Value="../../src"/>
       <UnitOutputDirectory Value="castle-engine-output/standalone/lazarus-lib/$(TargetCPU)-$(TargetOS)"/>
-      <Libraries Value="" />
     </SearchPaths>
     <Other>
       <Verbosity>
         <ShowHints Value="False"/>
       </Verbosity>
-      <CustomOptions Value=""/>
     </Other>
   </CompilerOptions>
   <Debugging>

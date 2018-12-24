@@ -18,16 +18,23 @@ unit CastleDBControls;
 
 interface
 
-uses CastleControls;
+uses SysUtils, Classes, DB,
+  CastleControls;
 
 type
-  { Database-aware edit box, rendered using Castle Game Engine. }
-  TCastleDBEdit = class(TCastleEdit)
-  end;
+  {$define read_interface}
+  {$I castledbcontrols_fielddatalink.inc}
+  {$I castledbcontrols_edit.inc}
+  {$undef read_interface}
 
 implementation
 
-uses CastleComponentSerialize;
+uses CastleUIControls, CastleComponentSerialize;
+
+{$define read_implementation}
+{$I castledbcontrols_fielddatalink.inc}
+{$I castledbcontrols_edit.inc}
+{$undef read_implementation}
 
 initialization
   RegisterSerializableComponent(TCastleDBEdit, 'Database-Aware Edit');
