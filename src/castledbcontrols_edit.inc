@@ -38,6 +38,7 @@
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure SetFocused(const Value: boolean); override;
     property Field: TField read GetField;
   published
     property DataField: string read GetDataField write SetDataField;
@@ -128,20 +129,20 @@ procedure TCastleDBEdit.DoChange;
 begin
   FDatalink.Edit;
   FDataLink.Modified;
+  inherited;
+end;
 
-  { TODO: This should be called at "focus out" or similar event,
-    to make sure the data is written to database.
-    Unfortunately we don't have such method in CGE now
-    (it is not guaranteed that controls get SetFocused(false),
-    so overriding SetFocused is not reliable for this). }
-
+procedure TCastleDBEdit.SetFocused(const Value: boolean);
+begin
+  inherited;
+  { When focus lost, finalize editing that was started
+    in TCastleDBEdit.DoChange. }
   if FDatalink.Editing then
   begin
     FDatalink.UpdateRecord;
     FDataLink.IsModified := False;
-  end;
-
-  inherited;
+  end else
+    FDatalink.Reset;
 end;
 
 {$endif read_implementation}

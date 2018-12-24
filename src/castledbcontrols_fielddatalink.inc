@@ -320,6 +320,9 @@ end;
 
 procedure TFieldDataLink.FocusControl(aField: TFieldRef);
 begin
+  { TODO:
+    This doesn't do anything for CGE now, until we implement something
+    like TUIContrainer.PersistentFocus. }
 end;
 
 {TFieldDataLink  Public Methods}

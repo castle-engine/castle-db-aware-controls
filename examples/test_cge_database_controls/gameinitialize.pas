@@ -47,6 +47,7 @@ type
     procedure ClickNew(Sender: TObject);
     procedure ClickDelete(Sender: TObject);
     procedure ClickOpenInBrowser(Sender: TObject);
+    procedure SomeEditChanged(Sender: TObject);
   end;
 
 var
@@ -89,12 +90,15 @@ begin
   EditLastName.DataSource := DbModule.DataSourceSample;
   EditWww.DataSource := DbModule.DataSourceSample;
 
-  { Connect OnClick events to our buttons. }
+  { Connect OnXxx events to controls. }
   ButtonNext.OnClick := @ClickNext;
   ButtonPrevious.OnClick := @ClickPrevious;
   ButtonNew.OnClick := @ClickNew;
   ButtonDelete.OnClick := @ClickDelete;
   ButtonOpenInBrowser.OnClick := @ClickOpenInBrowser;
+  EditFirstName.OnChange := @SomeEditChanged;
+  EditLastName.OnChange := @SomeEditChanged;
+  EditWww.OnChange := @SomeEditChanged;
 
   { Open dataset }
   DbModule.DataSetSample.Open;
@@ -142,6 +146,11 @@ end;
 procedure TEventsHandler.ClickOpenInBrowser(Sender: TObject);
 begin
   OpenURL(DbModule.DataSetSampleWWW.Value);
+end;
+
+procedure TEventsHandler.SomeEditChanged(Sender: TObject);
+begin
+  UpdateRecordInfo; // show that Modified changed to true
 end;
 
 initialization
