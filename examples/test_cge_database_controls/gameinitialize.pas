@@ -32,9 +32,6 @@ var
 
 type
   { Class to handle application events. }
-
-  { TEventsHandler }
-
   TEventsHandler = class(TComponent)
   public
     LabelRecordInfo: TCastleLabel;
