@@ -6,6 +6,8 @@
 *.log
 examples/test_database_without_cge/test_database_without_cge
 examples/test_cge_database_controls/test_cge_database_controls
+# Library files placed alongside Windows executable
+*.dll
 
 # Build tool generated files
 castle-engine-output
@@ -13,5 +15,7 @@ castle-engine-output
 # Lazarus files not committed
 lib
 *.lps
-*.res
 backup
+
+# Resources (by Lazarus or CGE build tool)
+*.res
