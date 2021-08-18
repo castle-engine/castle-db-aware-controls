@@ -2,7 +2,7 @@
 <project name="test_cge_database_controls"
   standalone_source="test_cge_database_controls_standalone.lpr"
   game_units="GameInitialize"
-  editor_units="CastleDBControls">
+  editor_units="CastleDBControls, CastleRegisterStandardComponents">
   <compiler_options>
     <search_paths>
       <path value="../../src/"/>

@@ -10,9 +10,25 @@ The main file in this repository is the Pascal unit `CastleDBControls` in `src/c
 
 ## Example code
 
-The example in `examples/test_cge_database_controls/` presents simple editing of a table using CGE user interface. Note that it places non-visual non-CGE components (`TDataSource` and `TDbf`) in a data module. You cannot place them in CGE UI (`.castle-user-interface` file) for now. Alternatively, you could of course just create and initialize `TDataSource` and `TDbf` completely from Pascal code.
+The example in `examples/test_cge_database_controls/` presents simple editing of a table using CGE user interface.
 
-You can edit the user interface by calling `castle-engine editor` inside the `examples/test_cge_database_controls/` directory. This will start the [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php), with custom component `TCastleDBEdit` (which is not available in CGE core) included. See [more information about using CGE editor with custom components](https://github.com/castle-engine/castle-engine/blob/master/tools/castle-editor/README.md).
+You can edit the user interface by the [Castle Game Engine Editor](https://castle-engine.io/manual_editor.php):
+
+- Open the project,
+
+- Compile custom editor (to add `TCastleDBEdit` support) by _"Project -> Restart Editor (With Custom Components)"_.
+
+- Open the design `examples/test_cge_database_controls/data/gamestatemain.castle-user-interface` in the project.
+
+The database (non-visual, non-CGE) components `TDataSource` and `TDbf` in a data module, that is in LFM file `examples/test_cge_database_controls/code/datamodulesampledatabase.lfm`.
+
+- You *could* also place them in our CGE design (in `examples/test_cge_database_controls/data/gamestatemain.castle-user-interface`), as we *can* edit any non-visual component in CGE editor, and in fact we register `TDataSource` and `TDbf`.
+
+    But then field definitions are not as comfortable (data module adds very comfortable definitions like `DataSetSampleEMAIL: TStringField` thanks to Lazarus code tools).
+
+    TODO: Using `TDataSource` and `TDbf` in `gamestatemain.castle-user-interface` causes exceptions about abstract methods when trying to reload the saved design.
+
+- Alternatively, you could of course just create and initialize `TDataSource` and `TDbf` completely from Pascal code.
 
 ## Database format (DBF) used in the examples
 
@@ -28,13 +44,13 @@ Of course, `TCastleDBEdit` will work with any database that can be expressed usi
 
 Our example `examples/test_cge_database_controls/` uses solely _Castle Game Engine_ user interface. It does not use LCL for user interface, e.g. it doesn't use LCL `TForm`. Fortunately, it is still possible to use `TDataModule`. All the non-visual components that we want to use (`TDataModule`, `TDataSource`, `TDbf`) are actually part of FPC, not Lazarus.
 
-This allows to use Lazarus _Object Inspector_ to comfortably design our data module properties and components (with `TDataSource`, `TDbf`). Our module `GameInitialize` then sets the appropriate `EditXxx.DataSource` properties, this way linking CGE `TCastleDBEdit` with the database you designed in a data module.
+This allows to use Lazarus _Object Inspector_ to comfortably design our data module properties and components (with `TDataSource`, `TDbf`). Our module `GameStateMain` then sets the appropriate `EditXxx.DataSource` properties, this way linking CGE `TCastleDBEdit` with the database you designed in a data module.
 
 To make sure everything compiles smoothly (both from Lazarus and when using our build tool), just make sure to remove references to LCL (or units depending on LCL parts) from uses clauses. E.g. you don't need `DBFLaz` unit (that links to LCL, needlessly) or `FileUtil` or `LResources`. It should be possible, in theory, to depend only on packages like `LCLBase` and `LazUtils` (not full `LCL`), but it was causing linking errors in my tests (with Lazarus 1.8.4 based on FPC 3.0.4). Note: the linking errors could possibly by workarounded by adding `{$ifdef LCL} Interfaces, {$endif}` to the uses clause, but I haven't tested it here.
 
 ## License
 
-Copyright 2018 Michalis Kamburelis .
+Copyright 2018-2021 Michalis Kamburelis .
 
 Everything in this repository `castle-db-aware-controls` is under a permissive _Apache 2.0 License_. Simplifying: you can use it however you like (including for closed-source projects), just keep a mention that the original code is copyright by Michalis Kamburelis.
 
