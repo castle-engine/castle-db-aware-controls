@@ -19,7 +19,7 @@ unit CastleDBControls;
 interface
 
 uses SysUtils, Classes, DB,
-  CastleControls;
+  CastleControls, CastleClassUtils;
 
 type
   {$define read_interface}

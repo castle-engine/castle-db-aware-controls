@@ -39,6 +39,7 @@
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure SetFocused(const Value: boolean); override;
+    function PropertySections(const PropertyName: String): TPropertySections; override;
     property Field: TField read GetField;
   published
     property DataField: string read GetDataField write SetDataField;
@@ -149,6 +150,16 @@ begin
       FDataLink.IsModified := False;
     end else
       FDataLink.Reset;
+  end;
+end;
+
+function TCastleDBEdit.PropertySections(const PropertyName: String): TPropertySections;
+begin
+  case PropertyName of
+    'DataSource', 'DataField':
+      Result := [psBasic];
+    else
+      Result := inherited PropertySections(PropertyName);
   end;
 end;
 
